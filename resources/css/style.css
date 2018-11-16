@@ -1,0 +1,673 @@
+/* -------------------------------------------------------------------- */
+/* BASIC SETUP */
+/* -------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* :POINT 1: */
+    font-size: 1.25rem; /* 1.25 rem = 20px */
+    font-weight: 300;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+    background-color: #ffffff;
+    color: #555;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* -------------------------------------------------------------------- */
+/* REUSABLE COMPONENT */
+/* -------------------------------------------------------------------- */
+
+.row {
+
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.section-features {
+    height: 100vh;
+}
+
+section {
+    padding: 50px 0;
+}
+.section-meals {
+    padding: 0;
+}
+.box {
+    padding:1%;
+}
+
+/******************************* Heading of the page ***************************/
+
+h1,
+h2,
+h3 {
+    
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color:#fff;
+    /* 
+        we make font-size in percentage because for responsive design, everything should be relative.
+        So font-size in h1 element is set, relative to font-size of html element. Refer :POINT 1:
+        so if in future we change the font-size of html element from 20px to 18px, then the content of 
+        h1 element also change based on that new font;
+    */
+    font-size: 240%;
+    word-spacing: 4px;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 4px;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 100%;
+    word-spacing: 4px;
+    /* text-align: center; */
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+h2::after {
+
+    content:"";
+    display:block;
+    height: 2px;
+    width: 100px;
+    background-color: #e17055;
+    margin: 0 auto;
+    margin-top:30px;
+}
+.header-title {
+
+    font-weight: 900;
+}
+
+.header-heading {
+    text-transform: lowercase;
+}
+
+
+/***************************** PARAGRAPH *****************************/
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin: auto;
+}
+
+.box p {
+    font-size: 90%;
+    line-height:145%;
+}
+
+/***************************** ICON *****************************/
+
+.icon-big {
+    font-size: 350%;
+    color: #e17055;
+    display: block;
+    /* margin: auto; */
+    margin-bottom: 10px;
+    
+}
+
+.icon-small {
+
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    color: #e17055;
+    font-size:120%;
+    margin-right: 10px;
+
+    /* Secret to align text and icon */
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+    
+}
+
+
+/********************** HEADER BUTTON :link and :visited ************************/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    font-weight: 400;
+    padding:10px 30px;
+    border-radius: 50px;
+
+    transition: background-color .4s, color .4s, border .4s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+
+    background-color: #e17055;
+    border: 1px solid #e17055;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+
+    color: #e17055;
+    border: 1px solid #e17055;
+}
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #dc5838;
+    cursor: pointer;
+    /* color: #fff; */
+}
+
+/* HEADER BUTTON :hover and :active state */
+.btn-full:hover,
+.btn-full:active {
+
+    border: 1px solid #dc5838;
+    color: #fff;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+
+    color: #fff;
+    border: 1px solid #dc5838;
+}
+
+.city-feature a:link,
+.city-feature a:visited {
+
+    color: #e17055;
+    text-decoration:none;
+    padding-bottom: 1px;
+    border-bottom:1px solid #e17055;
+    transition: border-bottom .1s, color .2s;
+}
+.city-feature a:hover,
+.city-feature a:active {
+    border-bottom:1px solid transparent;
+    color: #555;
+}
+/* -------------------------------------------------------------------- */
+/* HEADER SECTION */
+/* -------------------------------------------------------------------- */
+
+header {
+    /* Here we use 2 image in background-image property 
+        first is linear-gradient and second is hero.jpg. 
+        NOTE: Image's order matter. So top is black linear-gradient and below it is our hero.jpg image
+    */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(./img/hero.jpg);
+    object-fit: cover;
+    height: 100vh;
+    background-position:center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-105%,-50%);
+}
+
+.logo {
+    height: 100px; /* width is automatically detected. OR  you can write width:auto */
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 50px;
+}
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+    /* I want font-size to be 18px which is 18/20 = 0.9 which is 90 percentage */
+    font-size: 90%;  
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+}
+
+.main-nav li a::after { 
+    display:block;
+    padding: 3px 0;
+    content: '';
+    border-bottom: solid 3px transparent;  
+    transform: scaleX(0);  
+    transition: transform .3s ease-in-out;
+}
+.main-nav li a:hover::after {
+    border-bottom: 2px solid #e17055;
+    transform: scaleX(1);
+}
+
+@keyframes line {
+  from {
+    left:50%;
+    width:0%;
+  }
+  to {
+    left:5%;
+    width:90%;
+  }
+}
+
+
+/* -------------------------------------------------------------------- */
+/* Features SECTION */
+/* -------------------------------------------------------------------- */
+
+.section-features .long-copy {
+    margin-bottom: 30px;
+}
+
+
+
+/* -------------------------------------------------------------------- */
+/* Meals SECTION */
+/* -------------------------------------------------------------------- */
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden; /* Image is overflow to its container (meals-photo)*/
+    background-color:#000;
+}
+.meal-photo img {
+    opacity: .5;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15); /* 1.15 mean image is 115% bigger */
+    transition: transform .5s, opacity .5s;
+
+}
+
+.meal-photo img:hover {
+    opacity: 1;
+    transform: scale(1.03); /* 1.03 mean image is 103% bigger */
+}
+
+/* -------------------------------------------------------------------- */
+/* How it works SECTION */
+/* -------------------------------------------------------------------- */
+
+.section-steps {
+    background-color: #f4f4f4;
+}
+
+.steps-box:first-child {
+
+    /* 
+        NOTE: we do not have text inside .steps-box:first-child , so why text-align property??
+        text-align property not only work for text but also works for all inline and inline-block element.
+        And image is also one of inline-block element.
+    */
+    text-align: right;
+
+    /*
+        Why padding-right in percentage instead of pixel??
+        Simple reason is responsive web design and we want our layout to be fluid and fluid layout mean all 
+        out layout properties to be percentage instead of ridge pixel.
+
+    */
+    padding-right: 3%;
+    margin-top:30px;
+}
+
+.steps-box:last-child {
+
+    padding-left: 3%;
+    margin-top:70px;
+}
+
+.app-screen {
+    width: 40%;
+    
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+    margin-bottom: 90px;
+}
+
+.works-step div {
+
+    font-size:150%;
+    font-weight: 400;
+    display: inline-block;
+    border: 2px solid #e17055;
+    color: #e17055;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    margin-right: 25px;
+
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+/* -------------------------------------------------------------------- */
+/* CITY SECTION */
+/* -------------------------------------------------------------------- */
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    /* border: 2px solid #e17055; */
+    border-radius: 8px;
+    box-shadow: 0px 0px 32px 4px rgba(0,0,0,0.41);
+}
+
+.city-feature {
+    
+    margin-bottom: 10px;
+}
+
+/* -------------------------------------------------------------------- */
+/* USER REVIEW SECTION */
+/* -------------------------------------------------------------------- */
+
+
+.seaction-testimonials {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(./img/back-customers.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; /* Fill the whole width of browser */
+    color: #fff;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 150%;
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote::before {
+    content:"\201C";
+    font-size: 600%;
+    display: block;
+    position: absolute;
+    top:-3px;
+    left:-6px;
+    font-family: sans-serif;
+}
+
+cite {
+    display: block;
+    padding: 2%;
+    font-size: 90%;
+    margin-top: 25px;    
+}
+
+
+cite img  {
+    width: 45px;
+    border-radius:50%;
+    margin-right: 15px;
+    vertical-align:middle;
+}
+
+/* -------------------------------------------------------------------- */
+/* SIGN UP SECTION */
+/* -------------------------------------------------------------------- */
+
+
+.section-plans {
+    background-color: #f4f4f4;
+
+}
+
+.plan-box {
+    background-color:#fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+
+    box-shadow: 0 2px 2px #efefef;
+}
+
+.plan-box div {
+    
+    padding: 15px;
+    border-bottom:2px solid #f4f4f4;
+}
+
+.plan-box  div:first-child {
+
+    background-color:#fcfcfc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}   
+.plan-box  div:last-child {
+    text-align:center;
+    border: 0;
+}
+.plan-price {
+
+    color: #e67e22;
+    font-size: 300%;
+    font-weight: 100;
+    margin-bottom:10px;
+}
+.plan-price span {
+
+    font-size: 30%;
+    font-weight: 400;
+    
+}
+.plan-price-meal {
+
+    font-size: 80%;
+}
+
+.plan-box ul {
+    list-style: none;
+
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+    font-size: 95%;
+}
+
+
+/* -------------------------------------------------------------------- */
+/* User Form SECTION */
+/* -------------------------------------------------------------------- */
+
+
+.contact-form {
+    width: 75%;
+    margin: 0 auto;
+
+}
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding:7px;
+    border-radius:8px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+input[type=checkbox] {
+    margin: 15px 5px 15px 0;
+
+}
+
+/* -------------------------------------------------------------------- */
+/* User Form SECTION */
+/* -------------------------------------------------------------------- */
+
+footer {
+    background-color: #333;
+    padding: 40px;
+    font-size: 90%;
+}
+.footer-nav {
+    float: left;
+}
+.social-links  {
+    float: right ;
+}
+
+.footer-nav,
+.social-links  {
+
+    list-style: none;
+    /* margin-top: 10px; */
+}
+
+.footer-nav li,
+.social-links li {
+    
+    display: inline-block;
+    margin-right: 20px
+    
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited{
+    
+    color: #fff;
+    text-decoration: none;  
+    border: 0;
+    transition: color .3s;
+    
+}
+
+
+.social-links li a:link,
+.social-links li a:visited {
+
+    color: #fff;
+    text-decoration: none;  
+    font-size: 170%;
+    border: 0;
+    transition: color .3s;
+    
+}
+
+.footer-nav li a:active,
+.footer-nav li a:hover
+{
+    
+    color: #e67e22;
+    
+
+}
+.social-links li a ion-icon:hover,
+.social-links li a ion-icon:active {
+    transition: color .4s;
+    animation:  social-zoom .9s cubic-bezier(.03,.7,.45,1.1);
+}
+
+.facebook:hover {
+
+    color: #3b5998; 
+}
+.twitter:hover {
+
+    color: #55acee; 
+}
+.instagram:hover {
+
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    border-radius: 6px;
+}
+.googleplus:hover {
+
+    color: #dc4e41; 
+}
+
+
+footer p {
+    color: #fff;
+    margin-top: 30px;
+    text-align:center;
+}
+@keyframes social-zoom{
+
+    0% {
+        transform: scale(1);
+        
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+        
+    }
+}
