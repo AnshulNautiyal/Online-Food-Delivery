@@ -254,7 +254,15 @@ header {
     float: left;
     margin-top: 20px;
 }
+.logo-black { 
+    display: none;
+    height: 50px; /* width is automatically detected. OR  you can write width:auto */
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
 
+/* Main Navigation */
 .main-nav {
     float: right;
     list-style: none;
@@ -297,7 +305,40 @@ header {
     width:90%;
   }
 }
+/* Sticky Navigation */
 
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 1;;
+}
+
+
+.sticky .main-nav { margin-top: 25px; }
+
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    /* I want font-size to be 18px which is 18/20 = 0.9 which is 90 percentage */
+    padding: 15px 0;
+    color: #555;
+    
+}
+
+.sticky .logo { display: none;}
+.sticky .logo-black {
+    display: block;
+}
+
+.sticky .main-nav li a:hover::after {
+    border-bottom: 2px solid #e17055;
+    transform: scaleX(1);
+    padding: 5px 0;
+}
 
 /* -------------------------------------------------------------------- */
 /* Features SECTION */

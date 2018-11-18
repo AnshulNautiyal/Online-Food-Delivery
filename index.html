@@ -29,14 +29,15 @@
     <header>
 
         <!-- Logo and navigation menu -->
-        <nav>
+        <nav >
             <div class="row">
                 <img src="./resources/img/logo-white.png" alt="Omnifood logo" class="logo">
+                <img src="./resources/img/logo.png" alt="Omnifood logo" class="logo-black">
                     <ul class="main-nav">
-                        <li><a href="#">Food Delivery</a></li>
-                        <li><a href="#">How it works</a></li>
-                        <li><a href="#">Our cities</a></li>
-                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#feature">Food Delivery</a></li>
+                        <li><a href="#works">How it works</a></li>
+                        <li><a href="#city">Our cities</a></li>
+                        <li><a href="#signup">Sign up</a></li>
                         
                     </ul>
             </div>
@@ -46,13 +47,13 @@
         <div class="hero-text-box">
             <h1>Let'<span class="header-heading">s</span> <span class="header-title">eat</span> together, <br/>
                 Let'<span class="header-heading">s</span> <span class="header-title">meat</span> together</h1>
-            <a class="btn btn-full" href="#">I'm hungary</a>
-            <a class="btn btn-ghost" href="#">Order Please</a>
+            <a class="btn btn-full js--scroll-to-plans" href="#">I'm hungary</a>
+            <a class="btn btn-ghost js--scroll-to-start" href="#">Order Please</a>
         </div>
     </header>
 
     <!-- 2nd Section called feature section -->
-    <section class="section-features">
+    <section class="section-features js--section-features" id="feature">
 
         <div class="row">
             
@@ -142,7 +143,7 @@
 
     <!-- 4th Section steps -->
 
-    <section class="section-steps">
+    <section class="section-steps" id="works">
 
 
         <div class="row">
@@ -184,7 +185,7 @@
 
     <!-- CITY SECTION -->
 
-    <section class="section-cities">
+    <section class="section-cities" id="city">
 
         <div class="row">
             <h2>We're currently in these cities.</h2>
@@ -304,7 +305,7 @@
 
     <!-- PRICING SECTION -->
 
-    <section class="section-plans">
+    <section class="section-plans js--section-plans" id="signup">
 
         <div class="row">
             <h2>Start Eating Healthy Today</h2>
@@ -533,5 +534,10 @@
 
         
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./vendors/js/jquery.waypoints.min.js"></script>
+    <!-- Our script.js file will always at the end -->
+    <script src="./resources/js/script.js"></script>
 </body>
 </html>
