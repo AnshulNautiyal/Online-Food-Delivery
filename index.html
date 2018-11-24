@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta name="description" content="Omnifood is premium online food delivery company that provide good and healthy food.">
 
     
     <link rel="stylesheet" type="text/css" href="./vendors/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="./vendors/css/animate.css">
     
     <!-- we put style.css here because after the CSS style of above css (normalize and grid)
          The last CSS effect will be our style.css
          If we put style.css above the normalize and grid file, then may be normalize and grid css will
          override the style.css file and we will not get the desired output we want.
-    -->
+    --> 
     <link rel="stylesheet" href="./resources/css/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="./resources/css/queries.css">
     <!-- website logo icon on browser tab -->
-    <link rel="shortcut icon" href="./resources/img/logo.png" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="./resources/img/logo.png" type="image/x-icon"> -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+
+    <!-- Fevicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./resources/fevicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/fevicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resources/fevicons/favicon-16x16.png">
+    <link rel="manifest" href="./resources/fevicons/site.webmanifest">
+    <link rel="mask-icon" href="./resources/fevicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./resources/fevicons/favicon.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./resources/fevicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     
 
     <title>Omnifood</title>
@@ -33,13 +47,16 @@
             <div class="row">
                 <img src="./resources/img/logo-white.png" alt="Omnifood logo" class="logo">
                 <img src="./resources/img/logo.png" alt="Omnifood logo" class="logo-black">
-                    <ul class="main-nav">
+                    <ul class="main-nav js--main-nav">
                         <li><a href="#feature">Food Delivery</a></li>
                         <li><a href="#works">How it works</a></li>
                         <li><a href="#city">Our cities</a></li>
                         <li><a href="#signup">Sign up</a></li>
                         
                     </ul>
+
+                    <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
+                    <!-- If we do not use href attribute inside 'a' tag then we will not get cursor pointer when we hover mouse on it. -->
             </div>
         </nav>
 
@@ -65,7 +82,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="row js--wp-1">
 
             <div class="col span-1-of-4 box">
                 <ion-icon name="infinite" class="icon-big"></ion-icon>
@@ -153,7 +170,7 @@
 
         <div class="row">
 
-            <div class="col span-1-of-2 steps-box">
+            <div class="col span-1-of-2 steps-box js--wp-2">
                 <img src="./resources/img/app-iPhone.png" alt="Omnifood App" class="app-screen">
             </div>
 
@@ -191,7 +208,7 @@
             <h2>We're currently in these cities.</h2>
         </div>
 
-        <div class="row">
+        <div class="row js--wp-3">
 
             <div class="col span-1-of-4 box">
                 <img src="./resources/img/delhi.jpeg" alt="Delhi City">
@@ -278,7 +295,7 @@
                     Omnifood is always consistence in terms of its product improvement and customer services.
                     Now-a-days Omnifood have start a new service to deliver food from your favourite places.
                     I have recently ordered pizza from Dominos via Omnifood app and the experience is awesome.
-                    <cite><img src="./resources/img/customer-1.jpg">Shubham Sharma</cite>
+                    <cite><img src="./resources/img/customer-1.jpg" alt="User 1">Shubham Sharma</cite>
                 </blockquote>
             </div>
 
@@ -287,7 +304,7 @@
                     I am using Omnifood from a very long ago and after it starts giving many coupons to their user, mine usage increase from
                     2-3 time per week to 5-6 time in a week.Since they deliver food before the expected time and without any defect in the
                     packing or in food like breakage of pack or leakage of food nothing happened.
-                    <cite><img src="./resources/img/customer-2.jpg">Avinash Yadav</cite>
+                    <cite><img src="./resources/img/customer-2.jpg" alt="User 2">Avinash Yadav</cite>
                 </blockquote>
             </div>
 
@@ -296,7 +313,7 @@
                     Hey friends I want share my experiences with Omnifood I ordered food from Omnifood and I found that service is good. I
                     really appreciate there effort they delivered food within 20 to 25 minutes with carrying nature. There services are
                     very good I have been using there app its good I got first 5 order in 50% less pricing. I enjoyed very much.
-                    <cite><img src="./resources/img/customer-3.jpg">Zishan Ahmed</cite>
+                    <cite><img src="./resources/img/customer-3.jpg" alt="User 3">Zishan Ahmed</cite>
                 </blockquote>
             </div>
 
@@ -315,7 +332,7 @@
 
             <div class="col span-1-of-3">
 
-                <div class="plan-box">
+                <div class="plan-box js--wp-4">
 
                     <div>
                         <h3>Premium</h3>

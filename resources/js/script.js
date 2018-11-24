@@ -84,5 +84,69 @@ $(document).ready(function(){
             }
         });
 
+
+        // Animation on scroll using jQuery and animate.css
+
+        $('.js--section-features').waypoint(function(direction){
+
+            // https://daneden.github.io/animate.css/
+            // this 'animated' and 'fadeIn' are classes provided by animate.css library
+            $('.js--wp-1').addClass('animated fadeInUp'); 
+            
+        });
+
+        // Animation on iphone on scroll
+
+        $('.js--wp-2').waypoint(function (direction) {
+
+            // https://daneden.github.io/animate.css/
+            // this 'animated' and 'bounceInUp' are classes provided by animate.css library
+            $('.js--wp-2').addClass('animated bounceInUp');
+
+        },{
+            offset:'50%'
+        });
+
+        // Animation on city on scroll
+
+        $('.js--wp-3').waypoint(function (direction) {
+
+            // https://daneden.github.io/animate.css/
+            // this 'animated' and 'bounceInUp' are classes provided by animate.css library
+            $('.js--wp-3').addClass('animated fadeIn');
+
+        }, {
+                offset: '50%'
+            });
+
+        // Animation to sign up on scroll
+
+        $('.js--wp-4').waypoint(function (direction) {
+
+            // https://daneden.github.io/animate.css/
+            // this 'animated' and 'bounceInUp' are classes provided by animate.css library
+            $('.js--wp-4').addClass('animated pulse');
+
+        }, {
+            offset: '50%'
+        });
+
+
+        // Mobile View Navigation
+
+        $('.js--nav-icon').click(function(){
+
+            var nav = $('.js--main-nav');
+            var icon = $('.js--nav-icon ion-icon');
+            nav.slideToggle();
+            if (icon.attr("name") == 'menu'){
+                icon.attr('name', 'close');
+            }else{
+                icon.attr('name', 'menu');
+            }
+            
+        });
+
+
     
 });

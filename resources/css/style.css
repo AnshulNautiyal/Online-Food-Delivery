@@ -5,7 +5,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html {
@@ -166,6 +167,8 @@ input[type=submit] {
     padding:10px 30px;
     border-radius: 50px;
 
+    -webkit-transition: background-color .4s, color .4s, border .4s;
+
     transition: background-color .4s, color .4s, border .4s;
 }
 
@@ -216,6 +219,7 @@ input[type=submit]:active {
     text-decoration:none;
     padding-bottom: 1px;
     border-bottom:1px solid #e17055;
+    -webkit-transition: border-bottom .1s, color .2s;
     transition: border-bottom .1s, color .2s;
 }
 .city-feature a:hover,
@@ -232,8 +236,10 @@ header {
         first is linear-gradient and second is hero.jpg. 
         NOTE: Image's order matter. So top is black linear-gradient and below it is our hero.jpg image
     */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(./img/hero.jpg);
-    object-fit: cover;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.75)),to(rgba(0, 0, 0, 0.75))), url(./img/hero-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(./img/hero-min.jpg);
+    -o-object-fit: cover;
+       object-fit: cover;
     height: 100vh;
     background-position:center;
     background-size: cover;
@@ -245,7 +251,8 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-105%,-50%);
+    -webkit-transform: translate(-105%,-50%);
+            transform: translate(-105%,-50%);
 }
 
 .logo {
@@ -287,12 +294,28 @@ header {
     padding: 3px 0;
     content: '';
     border-bottom: solid 3px transparent;  
-    transform: scaleX(0);  
-    transition: transform .3s ease-in-out;
+    -webkit-transform: scaleX(0);  
+            transform: scaleX(0);  
+    -webkit-transition: -webkit-transform .3s ease-in-out;  
+    transition: -webkit-transform .3s ease-in-out;  
+    transition: transform .3s ease-in-out;  
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 .main-nav li a:hover::after {
     border-bottom: 2px solid #e17055;
-    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+}
+
+@-webkit-keyframes line {
+  from {
+    left:50%;
+    width:0%;
+  }
+  to {
+    left:5%;
+    width:90%;
+  }
 }
 
 @keyframes line {
@@ -313,8 +336,9 @@ header {
     left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 2px #efefef;
-    z-index: 1;;
+    -webkit-box-shadow: 0 2px 2px #efefef;
+            box-shadow: 0 2px 2px #efefef;
+    z-index: 1;
 }
 
 
@@ -336,10 +360,25 @@ header {
 
 .sticky .main-nav li a:hover::after {
     border-bottom: 2px solid #e17055;
-    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
     padding: 5px 0;
 }
 
+/* Mobile view navigaton */
+
+.mobile-nav-icon {
+    float: right;
+    margin-top: 40px;
+    cursor: pointer; /* Since 'a' tag do not have href attribute so we use this property */
+    display: none; /* since we want this navigation icon to appear in UI through jQuery */
+
+}
+.mobile-nav-icon ion-icon {
+
+    font-size: 300%; /* NO need to use width and height. We can use font-size to increase size of navigation icon */
+    color: #fff;
+}
 /* -------------------------------------------------------------------- */
 /* Features SECTION */
 /* -------------------------------------------------------------------- */
@@ -374,14 +413,19 @@ header {
     opacity: .5;
     width: 100%;
     height: auto;
-    transform: scale(1.15); /* 1.15 mean image is 115% bigger */
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); /* 1.15 mean image is 115% bigger */
+    -webkit-transition: opacity .5s, -webkit-transform .5s;
+    transition: opacity .5s, -webkit-transform .5s;
     transition: transform .5s, opacity .5s;
+    transition: transform .5s, opacity .5s, -webkit-transform .5s;
 
 }
 
 .meal-photo img:hover {
     opacity: 1;
-    transform: scale(1.03); /* 1.03 mean image is 103% bigger */
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03); /* 1.03 mean image is 103% bigger */
 }
 
 /* -------------------------------------------------------------------- */
@@ -464,7 +508,8 @@ header {
     margin-bottom: 10px;
     /* border: 2px solid #e17055; */
     border-radius: 8px;
-    box-shadow: 0px 0px 32px 4px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 0px 0px 32px 4px rgba(0,0,0,0.41);
+            box-shadow: 0px 0px 32px 4px rgba(0,0,0,0.41);
 }
 
 .city-feature {
@@ -478,7 +523,8 @@ header {
 
 
 .seaction-testimonials {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(./img/back-customers.jpg);
+    background-image:-webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.75)),to(rgba(0, 0, 0, 0.75))), url(./img/back-customers-min.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(./img/back-customers-min.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover; /* Fill the whole width of browser */
@@ -534,7 +580,9 @@ cite img  {
     width: 90%;
     margin-left: 5%;
 
-    box-shadow: 0 2px 2px #efefef;
+    -webkit-box-shadow: 0 2px 2px #efefef;
+
+            box-shadow: 0 2px 2px #efefef;
 }
 
 .plan-box div {
@@ -644,6 +692,7 @@ footer {
     color: #fff;
     text-decoration: none;  
     border: 0;
+    -webkit-transition: color .3s;
     transition: color .3s;
     
 }
@@ -656,6 +705,7 @@ footer {
     text-decoration: none;  
     font-size: 170%;
     border: 0;
+    -webkit-transition: color .3s;
     transition: color .3s;
     
 }
@@ -670,8 +720,10 @@ footer {
 }
 .social-links li a ion-icon:hover,
 .social-links li a ion-icon:active {
+    -webkit-transition: color .4s;
     transition: color .4s;
-    animation:  social-zoom .9s cubic-bezier(.03,.7,.45,1.1);
+    -webkit-animation:  social-zoom .9s cubic-bezier(.03,.7,.45,1.1);
+            animation:  social-zoom .9s cubic-bezier(.03,.7,.45,1.1);
 }
 
 .facebook:hover {
@@ -698,17 +750,67 @@ footer p {
     margin-top: 30px;
     text-align:center;
 }
-@keyframes social-zoom{
+@-webkit-keyframes social-zoom{
 
     0% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
         
     }
     50%{
-        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
     }
     100%{
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
         
     }
 }
+@keyframes social-zoom{
+
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        
+    }
+    50%{
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+    }
+    100%{
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        
+    }
+}
+
+
+/* -------------------------------------------------------------------- */
+/* scroll animation using animate.css */
+/* -------------------------------------------------------------------- */
+
+/* Here we will hide 'how it work' section so that we can show fadeIn effect using animate.css which is shown in
+    script.js file       
+*/
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+.js--wp-4 {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {  /* This mean when the element have both 'js--wp-1' and 'animated' class then make the element visible by its 
+                        opacity.Remember the 'animated' class is because of animate.css library
+                     */
+    opacity: 1;
+}
+
+
